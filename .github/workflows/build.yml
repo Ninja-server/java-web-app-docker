@@ -16,4 +16,9 @@ jobs:
        cd /opt 
        sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
        sudo tar -xzvf apache-maven-3.9.9-bin.tar.gz
-       
+   - name: Build the maven code into artifact
+     run: | 
+       mvn clean
+       mvn package
+       mvn test
+       mvn install    
